@@ -16,13 +16,14 @@ export const DraggableNode = ({ type, label }) => {
         style={{ 
           cursor: 'grab', 
           minWidth: '80px', 
-          height: '60px',
+          height: '80px',
           display: 'flex', 
           alignItems: 'center', 
           borderRadius: '8px',
-          backgroundColor: '#1C2536',
+          backgroundColor: '#ffffffff',
           justifyContent: 'center', 
-          flexDirection: 'column'
+          flexDirection: 'column' ,
+          boxShadow:'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px'
         }} 
         draggable
       >

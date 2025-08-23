@@ -29,7 +29,7 @@ export const InputNode = ({ id, data }) => {
 
     <BaseNode title='Input' handles={nodeHandles}>
       <div>
-        <label style={{width: 200, height: 80, border: '1px solid black'}}>
+        <label style={{width: 200, height: 80, border: '2px solid black'}}>
           Name:
           <input 
             type="text" 
