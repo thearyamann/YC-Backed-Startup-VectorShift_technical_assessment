@@ -22,6 +22,10 @@ const toolConfig = [{
    type:"aws",
    label:"AWS"
 },
+{
+   type: "cloud",
+   label: "VectorDB"
+}
 ]
 
 export const PipelineToolbar = () => {
