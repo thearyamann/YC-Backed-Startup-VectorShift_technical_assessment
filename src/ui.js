@@ -7,19 +7,19 @@ import ReactFlow, { Controls, Background, MiniMap } from "reactflow";
 import { useStore } from "./store";
 import { shallow } from "zustand/shallow";
 import { InputNode } from "./nodes/InputNode";
-import { LLMNode } from "./nodes/llmNode";
-import { OutputNode } from "./nodes/outputNode";
+import { LLMNode } from "./nodes/LLMNode";
+import { OutputNode } from "./nodes/OutputNode";
+import { TextNode } from "./nodes/TextNode";
 import "reactflow/dist/style.css";
-
-
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
+
 const nodeTypes = {
   customInput: InputNode,
   llm: LLMNode,
   customOutput: OutputNode,
-
+  text: TextNode, 
 };
 
 const selector = (state) => ({
@@ -61,7 +61,6 @@ export const PipelineUI = () => {
         );
         const type = appData?.nodeType;
 
-        // check if the dropped element is valid
         if (typeof type === "undefined" || !type) {
           return;
         }
@@ -82,7 +81,8 @@ export const PipelineUI = () => {
         addNode(newNode);
       }
     },
-    [reactFlowInstance]
+    // Corrected dependency array to include all necessary functions
+    [reactFlowInstance, addNode, getNodeID]
   );
 
   const onDragOver = useCallback((event) => {
@@ -92,7 +92,8 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      {/* Corrected typo from "100wv" to "100vw" */}
+      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "70vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}

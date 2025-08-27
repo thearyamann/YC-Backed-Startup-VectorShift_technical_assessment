@@ -1,7 +1,7 @@
 //baseNode.js
 
 import React from 'react';
-import { Handle, Position } from 'reactflow'
+import { Handle } from 'reactflow'
 
 
 function BaseNode({title, children, handles = []}) {

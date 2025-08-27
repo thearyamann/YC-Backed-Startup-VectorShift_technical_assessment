@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Position } from 'reactflow';
-import BaseNode from './baseNode';
+import BaseNode from './BaseNode';
 
 export const OutputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
@@ -28,8 +28,8 @@ export const OutputNode = ({ id, data }) => {
   return (
     <BaseNode title='Output' handles={nodeHandles}>
       <div>
-        <label style={{width: 200, height: 80, border: '1px solid black'}}>
-          Name:
+       <label style={{display: 'block', marginBottom: '10px'}}>
+        Name:
           <input 
             type="text" 
             value={currName} 

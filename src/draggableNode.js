@@ -9,6 +9,7 @@ export const DraggableNode = ({ type, label }) => {
     };
   
     return (
+      <div className="">
       <div
         className={type}
         onDragStart={(event) => onDragStart(event, type)}
@@ -27,7 +28,8 @@ export const DraggableNode = ({ type, label }) => {
         }} 
         draggable
       >
-          <span style={{ color: '#fff' }}>{label}</span>
+          <span style={{ color: "black" }}>{label}</span>
+      </div>    
       </div>
     );
   };

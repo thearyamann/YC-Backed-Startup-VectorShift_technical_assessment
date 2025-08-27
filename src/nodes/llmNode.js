@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Position } from 'reactflow';
-import BaseNode from './baseNode';
+import BaseNode from './BaseNode';
 
 export const LLMNode = ({ id, data }) => {
   
